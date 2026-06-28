@@ -1,4 +1,4 @@
-        
+from fastapi.responses import HTMLResponse  
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -38,6 +38,11 @@ class HeartDiseaseInput(BaseModel):
 @app.get("/")
 def home():
     return {"message": "Heart Disease Prediction API"}
+# Frontend page (HTML UI)
+@app.get("/ui", response_class=HTMLResponse)
+def ui():
+    with open("index.html", "r") as f:
+        return f.read()
 
 @app.post("/predict")
 def predict(data: HeartDiseaseInput):

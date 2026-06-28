@@ -18,8 +18,8 @@ app.add_middleware(
 
 
 # Load ML model
-model = pickle.load(open("model.pkl", "rb"))
 
+model = pickle.load(open("model.pkl", "rb"))
 # Input schema
 class HeartDiseaseInput(BaseModel):
     age: float
@@ -35,8 +35,6 @@ class HeartDiseaseInput(BaseModel):
     slope: float
     ca: float
     thal: float
-
-app.mount("/static", StaticFiles(directory="static"), name="static")
 # UI route (HOME PAGE)
 @app.get("/", response_class=HTMLResponse)
 def ui():

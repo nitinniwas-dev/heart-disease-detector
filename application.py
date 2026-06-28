@@ -17,7 +17,7 @@ app.add_middleware(
 )
 
 # Load model
-model = pickle.load(open(r"C:\Users\Dell\Downloads\model.pkl", "rb"))
+model = pickle.load(open(model.pickle,"rb"))
 
 # Input Schema
 class HeartDiseaseInput(BaseModel):

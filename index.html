@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+
+        <h1> Heart Disease Detection  System</h1>
+        <p class="subtitle">Enter Patient Details </p>
+
+        <form id="heartForm">
+
+            <div class="grid">
+
+                <div class="field">
+                    <label>Age</label>
+                    <input type="number" id="age" placeholder="Enter age" required>
+                </div>
+
+                <div class="field">
+                    <label>Gender</label>
+                    <select id="sex" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Chest Pain Type</label>
+                    <select id="cp" required>
+                        <option value="" disabled selected>Select Type</option>
+                        <option value="0">Typical Angina</option>
+                        <option value="1">Atypical Angina</option>
+                        <option value="2">Non-anginal Pain</option>
+                        <option value="3">Asymptomatic</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Resting Blood Pressure</label>
+                    <input type="number" id="trestbps" placeholder="e.g. 120" required>
+                </div>
+
+                <div class="field">
+                    <label>Cholesterol</label>
+                    <input type="number" id="chol" placeholder="e.g. 200" required>
+                </div>
+
+                <div class="field">
+                    <label>Fasting Blood Sugar</label>
+                    <select id="fbs" required>
+                        <option value="" disabled selected>Select</option>
+                        <option value="0">Below 120</option>
+                        <option value="1">Above 120</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Rest ECG</label>
+                    <select id="restecg" required>
+                        <option value="" disabled selected>Select ECG</option>
+                        <option value="0">Normal</option>
+                        <option value="1">ST-T abnormality</option>
+                        <option value="2">LVH</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Max Heart Rate</label>
+                    <input type="number" id="thalach" placeholder="e.g. 150" required>
+                </div>
+
+                <div class="field">
+                    <label>Exercise Induced Angina</label>
+                    <select id="exang" required>
+                        <option value="" disabled selected>Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>ST Depression (Oldpeak)</label>
+                    <input type="number" step="0.1" id="oldpeak" placeholder="e.g. 1.5" required>
+                </div>
+
+                <div class="field">
+                    <label>Slope</label>
+                    <select id="slope" required>
+                        <option value="" disabled selected>Select Slope</option>
+                        <option value="0">Upsloping</option>
+                        <option value="1">Flat</option>
+                        <option value="2">Downsloping</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Number of Major Vessels</label>
+                    <input type="number" id="ca" placeholder="0 to 4" required>
+                </div>
+
+                <div class="field">
+                    <label>Thalassemia</label>
+                    <select id="thal" required>
+                        <option value="" disabled selected>Select Thal</option>
+                        <option value="1">Normal</option>
+                        <option value="2">Fixed Defect</option>
+                        <option value="3">Reversible Defect</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button type="submit">🔍 Predict</button>
+
+        </form>
+
+        <h2 id="result"></h2>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

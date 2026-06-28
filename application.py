@@ -4,7 +4,7 @@ from fastapi.responses import HTMLResponse,FileResponse
 from pydantic import BaseModel
 import pickle
 import numpy as np
-from fastapi.staticfiles import StaticFiles
+
 app = FastAPI()
 
 # CORS (important for frontend JS)

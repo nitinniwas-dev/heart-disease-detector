@@ -40,7 +40,13 @@ class HeartDiseaseInput(BaseModel):
 def ui():
     with open("index.html", "r", encoding="utf-8") as f:
         return f.read()
+@app.get("/script.js")
+def js():
+    return FileResponse("script.js")
 
+@app.get("/style.css")
+def css():
+    return FileResponse("style.css")
 
 # Prediction API
 @app.post("/predict")

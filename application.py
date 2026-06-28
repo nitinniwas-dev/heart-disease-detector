@@ -18,8 +18,10 @@ app.add_middleware(
 
 
 # Load ML model
+import os
 
-model = pickle.load(open("model.pkl", "rb"))
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "model.pkl")
+model = pickle.load(open(MODEL_PATH, "rb"))
 # Input schema
 class HeartDiseaseInput(BaseModel):
     age: float

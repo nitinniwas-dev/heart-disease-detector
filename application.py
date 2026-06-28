@@ -4,7 +4,7 @@ from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import pickle
 import numpy as np
-
+from fastapi.staticfiles import StaticFiles
 app = FastAPI()
 
 # CORS (important for frontend JS)
@@ -15,6 +15,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # Load ML model
 model = pickle.load(open("model.pkl", "rb"))
@@ -35,7 +36,7 @@ class HeartDiseaseInput(BaseModel):
     ca: float
     thal: float
 
-
+app.mount("/static", StaticFiles(directory="static"), name="static")
 # UI route (HOME PAGE)
 @app.get("/", response_class=HTMLResponse)
 def ui():
